@@ -1,6 +1,5 @@
 package com.ofirdahan;
 
-
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -8,28 +7,24 @@ import java.util.TreeMap;
 public class TakesOrder {
     private String mDrink;
     private String mFood;
-    private String mAppetizer;
 
+    Map<String, Integer> currentOrder = new TreeMap<>();
 
-    public TakesOrder(String drink, String food, String appetizer){
-        drink = mDrink;
-        food = mFood;
-        appetizer = mAppetizer;
+    Scanner scanner = new Scanner(System.in);
+
+    public void getDrink() {
+        System.out.println("What would you like to Drink?");
+        String drink = "";
+        drink = scanner.nextLine();
+        currentOrder.put(drink,1);
     }
 
-    public String getmDrink(String drink, int drinkAmount) {
-
-        return drink;
-    }
-
-    public String getmFood() {
+    public void getFood(){
+        System.out.println("\n"+"What would you like to Eat?");
         String food = "";
-        Scanner scanner = new Scanner(System.in);
-        food = scanner.nextLine().toLowerCase();
-        return food;
+        food = scanner.nextLine();
+        currentOrder.put(food,1);
+        System.out.println("\n"+"So that will be: "+currentOrder);
     }
 
-    public String getmAppetizer() {
-        return mAppetizer;
-    }
 }
