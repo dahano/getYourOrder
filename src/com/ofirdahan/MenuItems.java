@@ -11,10 +11,10 @@ public class MenuItems {
 
     public static List<String> getFoodItems() {
         foodItems.add("Salmon");
-        foodItems.add("Ahi Tuna");
-        foodItems.add("Tofu");
-        foodItems.add("Veggie");
-        foodItems.add("Gardein Chicken");
+        foodItems.add("Soup");
+        foodItems.add("Salad");
+        foodItems.add("Vegan");
+        foodItems.add("Falafel");
         return foodItems;
     }
 

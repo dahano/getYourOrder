@@ -12,7 +12,8 @@ public class Main {
                 "\n"+"And here is our Drink Menu: "+"\n" + fullMenu.getDrinkItems());
 
         newOrder.getFood();
-        newOrder.getDrink();
+        //newOrder.getDrink();
+       // System.out.println(TakesOrder.currentOrder + "\n" + MenuItems.getFoodItems());
 
 
 
