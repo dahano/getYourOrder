@@ -5,9 +5,6 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 public class TakesOrder {
-    private String mDrink;
-    private String mFood;
-
     static Map<String, Integer> currentOrder = new TreeMap<>();
 
     Scanner scanner = new Scanner(System.in);
@@ -16,7 +13,7 @@ public class TakesOrder {
         System.out.println("\n"+"What would you like to Drink?");
         String drink = scanner.nextLine();
         checker(drink);
-        if(checker(drink) == true){
+        if(checker(drink)){
             System.out.println("Great! I'll add that as well");
             currentOrder.put(drink,1);
         }else{
@@ -29,7 +26,7 @@ public class TakesOrder {
         System.out.println("\n"+"What would you like to Eat?");
         String food = scanner.nextLine();
         checker(food);
-        if(checker(food) == true){
+        if(checker(food)){
             System.out.println("Great! I'll add that to the current order");
             currentOrder.put(food,1);
         }else{
@@ -37,18 +34,11 @@ public class TakesOrder {
             getFood();
         }
     }
-
+    //TODO: input should not be case sensitive at all. Users should be able to type in all-caps or all lowerCase without error;
     public boolean checker(String item){
         char upperCase = item.toUpperCase().charAt(0);
         item = item.replace(item.charAt(0), upperCase);
-        if(MenuItems.foodItems.contains(item) || MenuItems.getDrinkItems().contains(item)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return MenuItems.foodItems.contains(item) || MenuItems.getDrinkItems().contains(item);
     }
-
-
 
 }
